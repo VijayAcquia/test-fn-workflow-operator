@@ -1,0 +1,8 @@
+language: go
+branches:
+  except:
+    # Avoid double testing stories which are tested as PRs.
+    - /[a-zA-Z]+-\d+/
+go:
+- '1.13.x'
+
