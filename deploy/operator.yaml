@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fn-workflows-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: fn-workflows-operator
+  template:
+    metadata:
+      labels:
+        name: fn-workflows-operator
+    spec:
+      serviceAccountName: fn-workflows-operator
+      containers:
+        - name: fn-workflows-operator
+          # Replace this with the built image name
+          image: 881217801864.dkr.ecr.us-east-1.amazonaws.com/fn-workflows-operator:latest
+          command:
+          - fn-workflows-operator
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              value: ""
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "fn-workflows-operator"

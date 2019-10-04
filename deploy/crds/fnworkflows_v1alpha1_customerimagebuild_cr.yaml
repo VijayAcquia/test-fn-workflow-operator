@@ -1,0 +1,10 @@
+apiVersion: fnworkflows.acquia.io/v1alpha1
+kind: CustomerImageBuild
+metadata:
+  name: example-customerimagebuild
+spec:
+  repoURL: gitlab.fn.acquia.io/wl-gore/poc-gore
+  gitRef: refs/heads/master
+  imageRepo: 881217801864.dkr.ecr.us-east-1.amazonaws.com/customer/gitlab.fn.acquia.io/wl-gore/poc-gore
+  imageTag: refs..heads..master..20190911_214105.139646
+  retries: 1
