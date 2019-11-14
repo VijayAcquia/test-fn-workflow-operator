@@ -15,7 +15,7 @@ This is the operator responsible for orchestrating workflows over NGC infrastruc
 
     ```bash
     helm install --name fn-drupal-operator --namespace services ./fn-drupal-operator \
-      --set image.tag=${your_image_tag}
+      --set image.tag=${yourimage_tag}
     ```
 
     If you want the Operator to only watch a specific Namespace, that can be specified by adding the command line option:
